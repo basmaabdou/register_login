@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <string.h>
+
+struct User {
+    char userName[1000];
+    char password[1000];
+};
+
+struct User users[1000];
+int count = 0;
+
+void Register() {
+    struct User userRegister;
+    printf("Enter userName: ");
+    scanf("%s", userRegister.userName);
+    
+    printf("Enter Password: ");
+    scanf("%s", userRegister.password);
+
+    users[count++] = userRegister;
+    printf("successfully registered \n");
+}
+
+
+void Login() {
+    char userName[1000];
+    char password[1000];
+    
+    printf("Enter UserName: ");
+    scanf("%s", userName);
+    
+    printf("Enter Password: ");
+    scanf("%s", password);
+    
+    for (int i = 0; i < count; i++) {
+        if (strcmp(userName, users[i].userName) == 0 &&
+            strcmp(password, users[i].password) == 0) {
+            printf("Login successful, Hello %s\n",  users[i].userName);
+            return;
+        }
+    }
+    
+    printf("Invalid username or password\n");
+}
+
+
+int main(){
+    printf("Register a new User\n");
+    Register();
+    printf("Login your User \n");
+    Login();
+  return 0;
+}
