@@ -7,7 +7,7 @@ struct User {
 };
 
 
-struct User users[500];
+struct User users[100];
 int count = 0;
 
 void Register() {
