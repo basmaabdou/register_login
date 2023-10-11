@@ -2,11 +2,11 @@
 #include <string.h>
 
 struct User {
-    char userName[1000];
-    char password[1000];
+    char userName[500];
+    char password[500];
 };
 
-struct User users[1000];
+struct User users[500];
 int count = 0;
 
 void Register() {
@@ -23,8 +23,8 @@ void Register() {
 
 
 void Login() {
-    char userName[1000];
-    char password[1000];
+    char userName[500];
+    char password[500];
     
     printf("Enter UserName: ");
     scanf("%s", userName);
