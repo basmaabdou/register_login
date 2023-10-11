@@ -6,6 +6,7 @@ struct User {
     char password[500];
 };
 
+
 struct User users[500];
 int count = 0;
 
