@@ -7,7 +7,7 @@ struct User
     char password[500];
 };
 
-struct User users[100];
+struct User users[200];
 int count = 0;
 
 void Register() 
