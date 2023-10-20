@@ -7,6 +7,7 @@ struct User
     char password[500];
 };
 
+
 struct User users[200];
 int count = 0;
 
