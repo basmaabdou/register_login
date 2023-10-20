@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
-// USER CLASS
 struct User 
 {
     char userName[500];
     char password[500];
+    union {
+        char flag[4];
+    };
 };
 
-// USER CONSTRACT
-struct User users[200];
+struct User users[100];
 int count = 0;
 
 void Register() 
@@ -20,6 +21,9 @@ void Register()
     
     printf("Enter Password: ");
     scanf("%s", userRegister.password);
+
+    printf("Enter Flag (true or false): ");
+    scanf("%s", userRegister.flag);
     
     users[count++] = userRegister;
     printf("Successfully registered\n");
@@ -40,15 +44,21 @@ void Login()
     {
         if (strcmp(userName, users[i].userName) == 0 && strcmp(password, users[i].password) == 0) 
         {
-           
+            if ( strcmp(users[i].flag, "true") == 0) 
+            {
                 printf("Login successful, Hello %s\n", users[i].userName);
                 return;
+            } 
+            else 
+            {
+                printf("User account is not active\n");
+                return;
+            }
         }
     }
     
     printf("Invalid username or password\n");
 }
-
 
 int main(void) 
 {
