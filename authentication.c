@@ -8,7 +8,7 @@ struct User
     char password[500];
 };
 
-
+// USER CONSTRACT
 struct User users[200];
 int count = 0;
 
