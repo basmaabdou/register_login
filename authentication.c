@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+// USER CLASS
 struct User 
 {
     char userName[500];
